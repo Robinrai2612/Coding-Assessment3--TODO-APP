@@ -1,0 +1,22 @@
+<div class="list row">
+  <div class="col-md-8"></div>
+</div>
+<div class="container">
+  <div class="col-md-12">
+    <h4>Todo List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let todolist of todolists; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTodolist(todolist, i)"
+      >
+        {{ todolist.title }}
+      </li>
+    </ul>
+
+    <button class="m-1 btn btn-sm btn-secondary" (click)="removeAllTodolists()">
+      DELETE All
+    </button>
+  </div>
+</div>

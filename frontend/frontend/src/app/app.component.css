@@ -1,0 +1,21 @@
+.navbar-brand{
+    color: rgb(159, 56, 19);
+    border: 2px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(50, 102, 205);
+    border-radius: 20px;
+} 
+.nav-item{
+    color: orangered;
+    border: 2px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(205, 50, 192);
+    border-radius: 20px;
+} 
+

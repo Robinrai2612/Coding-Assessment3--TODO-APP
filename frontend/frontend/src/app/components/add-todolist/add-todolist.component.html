@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Task To do: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="todolist.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Priority: </label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="todolist.description"
+          name="description"
+        />
+      </div>
+
+      <button
+        (click)="saveTodolist()"
+        class="btn btn-warning"
+        style="align-items: center"
+      >
+        Submit
+      </button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Todolist was submitted successfully!</h4>
+      <h4>Hey! Do you wanna add more then click on the button below!</h4>
+
+      <button class="btn btn-success" (click)="newTodolist()">Add</button>
+    </div>
+  </div>
+</div>

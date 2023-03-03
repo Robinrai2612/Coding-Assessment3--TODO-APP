@@ -1,0 +1,96 @@
+<div class="container">
+  <div *ngIf="viewMode; else editable">
+    <div *ngIf="current.id">
+      <h4>Todolist</h4>
+      <div>
+        <label><strong>Task:</strong></label> {{ currentTodolist.title }}
+      </div>
+      <div>
+        <label><strong>Priority:</strong></label>
+        {{ currentTodolist.description }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentTodolist.published ? "Done" : "Pending" }}
+      </div>
+
+      <a
+        class="badge badge-warning"
+        routerLink="/todolists/{{ currentTodolist.id }}"
+      >
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!current">
+      <br />
+      <p>Please click on a Todolist...</p>
+    </div>
+  </div>
+
+  <ng-template #editable>
+    <div *ngIf="current.id" class="edit-form">
+      <h4>Todolist</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Task Todo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentTodolist.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Priority</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentTodolist.description"
+            name="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ current.published ? "Done" : "Pending" }}
+        </div>
+      </form>
+
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="current.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!current.published"
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>
+
+      <button class="badge badge-danger mr-2" (click)="deleteTodolist()">
+        Delete
+      </button>
+
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateTodolist()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+
+    <div *ngIf="!current.id">
+      <br />
+      <p>Cannot access this Todolist...</p>
+    </div>
+  </ng-template>
+</div>

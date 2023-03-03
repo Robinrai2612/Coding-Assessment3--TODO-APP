@@ -1,0 +1,16 @@
+.edit-form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.container {
+  color: green;
+  max-width: 800px; /* sets the maximum width of the container */
+  margin: 0 auto; /* centers the container horizontally */
+  padding: 20px; /* adds some padding around the container */
+  background-color: #f5f5f5; /* sets the background color of the container */
+  border: 1px solid #ddd;
+  border-color: aqua; /* adds a border around the container */
+  border-radius: 5px; /* rounds the corners of the container */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* adds a slight shadow to the container */
+}
