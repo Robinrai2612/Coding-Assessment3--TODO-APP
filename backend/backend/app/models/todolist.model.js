@@ -14,6 +14,6 @@ module.exports = mongoose => {
     return object;
   });
 
-  const Tutorial = mongoose.model("todolist", schema);
-  return Tutorial;
+  const Todolist = mongoose.model("todolist", schema);
+  return Todolist;
 };
